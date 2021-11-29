@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayPlanner", "HolidayPlanner\HolidayPlanner.csproj", "{63536C18-BEBE-40D6-98C9-E249E6782620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayPlanner.Data", "HolidayPlanner.Data\HolidayPlanner.Data.csproj", "{36E3E582-0A0F-4FC2-8C3A-B9E409DD5FEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayPlanner.Models", "HolidayPlanner.Models\HolidayPlanner.Models.csproj", "{BECF7B6D-1650-424D-A4F6-943874099431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayPlanner.Services", "HolidayPlanner.Services\HolidayPlanner.Services.csproj", "{F8B8AF00-B63A-4320-A8D7-B8DF95FB0568}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63536C18-BEBE-40D6-98C9-E249E6782620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63536C18-BEBE-40D6-98C9-E249E6782620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63536C18-BEBE-40D6-98C9-E249E6782620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63536C18-BEBE-40D6-98C9-E249E6782620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36E3E582-0A0F-4FC2-8C3A-B9E409DD5FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E3E582-0A0F-4FC2-8C3A-B9E409DD5FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E3E582-0A0F-4FC2-8C3A-B9E409DD5FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E3E582-0A0F-4FC2-8C3A-B9E409DD5FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECF7B6D-1650-424D-A4F6-943874099431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECF7B6D-1650-424D-A4F6-943874099431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECF7B6D-1650-424D-A4F6-943874099431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECF7B6D-1650-424D-A4F6-943874099431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8B8AF00-B63A-4320-A8D7-B8DF95FB0568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8B8AF00-B63A-4320-A8D7-B8DF95FB0568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8B8AF00-B63A-4320-A8D7-B8DF95FB0568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8B8AF00-B63A-4320-A8D7-B8DF95FB0568}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19DF90BB-5A6F-402C-BBBD-0725F5AED3EC}
+	EndGlobalSection
+EndGlobal

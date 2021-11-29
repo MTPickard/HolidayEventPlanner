@@ -1,0 +1,57 @@
+﻿@model HolidayPlanner.Models.PersonDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PersonDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+                <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonBudget)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonBudget)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentBalance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentBalance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmountLeft)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmountLeft)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfGifts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfGifts)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index", "Person", new { id = TempData["BudgetId"]}, null)
+</p>

@@ -1,0 +1,144 @@
+﻿
+/*BODY*/
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url("Images/growmoney.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/*TITLE'S*/
+.budgetTitle{
+    color: black;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    font-family: sans-serif;
+    font-size: 5em;
+}
+
+/*BUDGET TABLE*/
+.budgetbackground {
+    margin: 0;
+    padding: 0;
+    border: 5px solid red;
+    height: 500px;
+    width: 500px;
+    background-color: black;
+    z-index: 100;
+}
+
+.table{
+    background-color: #1c1f21;
+    color: white;
+    border: 3px solid black;
+}
+
+
+.tableheader {
+    text-align: center;
+    border: 1px solid black;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #99907d;
+    color: #1c1f21;
+}
+
+.emptytablespace {
+    background-color: #99907d;
+    background-size: cover;
+    border: 1px solid black;
+}
+
+.tabledata {
+    padding: 0;
+    text-align: center;
+    color: white;
+    border: 1px solid #99907d;
+}
+
+.budgetAmount {
+    padding-top: 20px;
+    text-align: center;
+    border: 1px solid #99907d;
+    color: green;
+}
+
+.currentBalance {
+    padding-top: 20px;
+    text-align: center;
+    border: 1px solid #99907d;
+    color: red;
+}
+
+.amountLeft {
+    padding-top: 20px;
+    text-align: center;
+    border: 1px solid #99907d;
+    color: dodgerblue;
+}
+
+.tableoptions {
+    border: 1px solid #99907d;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.secondUl {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border-top: 1px solid white;
+}
+
+.non-divider{
+    padding-left: 5px;
+    padding-right: 5px;
+    list-style: none;
+    display: inline;
+}
+
+.divider {
+    padding-left: 5px;
+    padding-right: 15px;
+    list-style: none;
+    display: inline;
+    border-right: 1px solid white;
+}
+
+.instructionSteps{
+    font-size: 2em;
+    color: black;
+}
+
+.jumbotron{
+}
+
+
+
+
+
