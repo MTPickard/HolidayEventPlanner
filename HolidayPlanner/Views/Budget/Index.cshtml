@@ -4,92 +4,95 @@
     ViewBag.Title = "Index";
 }
 
+<div class="indexContainer col-md-12">
+    <div class="indexBackground col-md-10">
+        <div class="col-md-12">
+            <h2 class="indexTitle">
+                Budget's
+            </h2>
 
-<div class="budgetbackground">
+            @if (TempData.ContainsKey("SaveResult"))
+            {
+                <div class="alert alert-success fade in" role="alert">
 
-<h2 class="budgetTitle">
-    Budget's
-</h2>
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                    @TempData["SaveResult"]
+                </div>
+            }
 
-    @if (TempData.ContainsKey("SaveResult"))
-    {
-        <div class="alert alert-success fade in" role="alert">
+            <table class="table">
+                <tr>
+                    <th class="tableheader col-md-2">
+                        @Html.DisplayNameFor(model => model.BudgetName)
+                    </th>
+                    <th class="tableheader col-md-2">
+                        @Html.DisplayNameFor(model => model.DateOfEvent)
+                    </th>
+                    <th class="tableheader col-md-1">
+                        @Html.DisplayNameFor(model => model.NumberOfPaychecks)
+                    </th>
+                    <th class="tableheader col-md-1">
+                        @Html.DisplayNameFor(model => model.BudgetAmount)
+                    </th>
+                    <th class="tableheader col-md-1">
+                        @Html.DisplayNameFor(model => model.CurrentBalance)
+                    </th>
+                    <th class="tableheader col-md-1">
+                        @Html.DisplayNameFor(model => model.AmountLeft)
+                    </th>
+                    <th class="tableheader col-md-1">
+                        @Html.DisplayNameFor(model => model.AmountToSavePerPaycheck)
+                    </th>
+                    <th class="emptytablespace col-md-2"></th>
+                </tr>
 
-            <button type="button" class="close" data-dismiss="alert">
-                <span>&times;</span>
-            </button>
-            @TempData["SaveResult"]
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="tabledata">
+                            @Html.DisplayFor(modelItem => item.BudgetName)
+                        </td>
+                        <td class="tabledata">
+                            @Html.DisplayFor(modelItem => item.DateOfEvent)
+                        </td>
+                        <td class="tabledata">
+                            @Html.DisplayFor(modelItem => item.NumberOfPaychecks)
+                        </td>
+                        <td class="budgetAmount">
+                            @Html.DisplayFor(modelItem => item.BudgetAmount)
+                        </td>
+                        <td class="currentBalance">
+                            @Html.DisplayFor(modelItem => item.CurrentBalance)
+                        </td>
+                        <td class="amountLeft">
+                            @Html.DisplayFor(modelItem => item.AmountLeft)
+                        </td>
+                        <td class="savePerPaycheck">
+                            @Html.DisplayFor(modelItem => item.AmountToSavePerPaycheck)
+                        </td>
+                        <td class="tableoptions">
+                            <ul>
+                                <li class="divider">@Html.ActionLink("Edit", "Edit", new { id = item.BudgetId }, new { @class = "optionAL" })</li>
+                                <li class="divider">@Html.ActionLink("Details", "Details", new { id = item.BudgetId }, new { @class = "optionAL" })</li>
+                                <li class="non-divider">@Html.ActionLink("Delete", "Delete", new { id = item.BudgetId }, new { @class = "optionAL" })</li>
+                            </ul>
+                            <ul class="secondUl">
+                                <li class="non-divider">@Html.ActionLink("View Recipients", "Index", "Person", new { id = item.BudgetId }, new { @class = "viewPeopleAL" })</li>
+                            </ul>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+            <p class="createNew">
+                @Html.ActionLink("Create New", "Create", null, new { @class = "createBtn" })
+            </p>
         </div>
-    }
-
-    <table class="table">
-        <tr>
-            <th class="tableheader col-md-2">
-                @Html.DisplayNameFor(model => model.BudgetName)
-            </th>
-            <th class="tableheader col-md-2">
-                @Html.DisplayNameFor(model => model.DateOfEvent)
-            </th>
-            <th class="tableheader col-md-1">
-                @Html.DisplayNameFor(model => model.NumberOfPaychecks)
-            </th>
-            <th class="tableheader col-md-1">
-                @Html.DisplayNameFor(model => model.BudgetAmount)
-            </th>
-            <th class="tableheader col-md-1">
-                @Html.DisplayNameFor(model => model.CurrentBalance)
-            </th>
-            <th class="tableheader col-md-1">
-                @Html.DisplayNameFor(model => model.AmountLeft)
-            </th>
-            <th class="tableheader col-md-1">
-                @Html.DisplayNameFor(model => model.AmountToSavePerPaycheck)
-            </th>
-            <th class="emptytablespace col-md-2"></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td class="tabledata">
-                    @Html.DisplayFor(modelItem => item.BudgetName)
-                </td>
-                <td class="tabledata">
-                    @Html.DisplayFor(modelItem => item.DateOfEvent)
-                </td>
-                <td class="tabledata">
-                    @Html.DisplayFor(modelItem => item.NumberOfPaychecks)
-                </td>
-                <td class="budgetAmount">
-                    @Html.DisplayFor(modelItem => item.BudgetAmount)
-                </td>
-                <td class="currentBalance">
-                    @Html.DisplayFor(modelItem => item.CurrentBalance)
-                </td>
-                <td class="amountLeft">
-                    @Html.DisplayFor(modelItem => item.AmountLeft)
-                </td>
-                <td class="tabledata">
-                    @Html.DisplayFor(modelItem => item.AmountToSavePerPaycheck)
-                </td>
-                <td class="tableoptions">
-                    <ul>
-                        <li class="divider">@Html.ActionLink("Edit", "Edit", new { id = item.BudgetId })</li>
-                        <li class="divider">@Html.ActionLink("Details", "Details", new { id = item.BudgetId })</li>
-                        <li class="non-divider">@Html.ActionLink("Delete", "Delete", new { id = item.BudgetId }, new { @class = "delete"})</li>
-                    </ul>
-                    <ul class="secondUl">
-                        <li class="non-divider">@Html.ActionLink("View People", "Index", "Person", new { id = item.BudgetId }, null)</li>
-                    </ul>
-                </td>
-            </tr>
-        }
-
-    </table>
-
-    <p class="createNew">
-        @Html.ActionLink("Create New", "Create")
-    </p>
-
+    </div>
+    <div class="col-md-2"></div>
 </div>
+
 

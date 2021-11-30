@@ -109,6 +109,7 @@ namespace HolidayPlanner.Controllers
             var service = CreatePersonService();
             var model = service.GetPersonById(id);
 
+            TempData["BudgetId"] = model.BudgetId;
             return View(model);
         }
 
@@ -122,6 +123,7 @@ namespace HolidayPlanner.Controllers
             var model = service.GetPersonById(id);
             service.DeletePerson(id);
 
+            
             TempData["SaveResult"] = $"{model.FirstName} was successfully deleted.";
 
             return RedirectToAction("Index", new { id = id });

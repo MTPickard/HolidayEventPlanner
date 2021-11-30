@@ -11,13 +11,16 @@ namespace HolidayPlanner.Models
     {
         public int BudgetId { get; set; }
 
+        [Display(Name = "Budget Name")]
         public string BudgetName { get; set; }
 
         [Display(Name = "Budget Amount")]
         public decimal BudgetAmount { get; set; }
 
+        [Display(Name ="Date of Event")]
         public DateTimeOffset? DateOfEvent { get; set; }
 
+        [Display(Name ="Number of Paychecks")]
         public int NumberOfPaychecks { get; set; }
     }
 }

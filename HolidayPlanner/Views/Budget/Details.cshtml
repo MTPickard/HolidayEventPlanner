@@ -4,14 +4,14 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>BudgetDetail</h4>
-    <hr />
+<div class="editBackground col-md-5">
+
+    <h2 class="editTitle">Details</h2>
+
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.BudgetName)
+            @Html.DisplayNameFor(model => model.BudgetName):
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DateOfEvent)
+            @Html.DisplayNameFor(model => model.DateOfEvent):
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NumberOfPaychecks)
+            @Html.DisplayNameFor(model => model.NumberOfPaychecks):
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BudgetAmount)
+            @Html.DisplayNameFor(model => model.BudgetAmount):
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CurrentBalance)
+            @Html.DisplayNameFor(model => model.CurrentBalance):
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AmountLeft)
+            @Html.DisplayNameFor(model => model.AmountLeft):
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AmountToSavePerPaycheck)
+            @Html.DisplayNameFor(model => model.AmountToSavePerPaycheck):
         </dt>
 
         <dd>
@@ -67,8 +67,7 @@
         </dd>
 
     </dl>
-</div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", "", new { @class = "back" })
 </p>
+</div>

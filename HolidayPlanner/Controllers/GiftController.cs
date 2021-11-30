@@ -112,6 +112,8 @@ namespace HolidayPlanner.Controllers
             var service = CreateGiftService();
             var entity = service.GetGiftsById(id);
 
+            TempData["PersonId"] = entity.PersonId;
+
             return View(entity);
         }
 
@@ -126,7 +128,7 @@ namespace HolidayPlanner.Controllers
             service.DeleteGift(id);
 
             TempData["SaveResult"] = $"{model.Name} was deleted";
-            return RedirectToAction("Index", new { id = id});
+            return RedirectToAction("Index", new { id = model.PersonId});
         }
 
 

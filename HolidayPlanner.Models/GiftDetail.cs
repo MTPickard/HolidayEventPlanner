@@ -15,12 +15,6 @@ namespace HolidayPlanner.Models
         public int PersonId { get; set; }
         public Person Person { get; set; }
 
-
-        //[ForeignKey(nameof(Budget))]
-        //public int BudgetId { get; set; }
-        //public Budget Budget { get; set; }
-
-
         public int GiftId { get; set; }
 
         public string Name { get; set; }
@@ -29,6 +23,7 @@ namespace HolidayPlanner.Models
 
         public int Quantity { get; set; }
 
+        [Display(Name="Total Price")]
         public decimal TotalPrice
         {
             get

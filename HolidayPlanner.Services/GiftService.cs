@@ -97,6 +97,7 @@ namespace HolidayPlanner.Services
 
             return new GiftDetail
             {
+                PersonId = entity.PersonId,
                 GiftId = entity.GiftId,
                 Name = entity.Name,
                 Quantity = entity.Quantity,
@@ -108,7 +109,11 @@ namespace HolidayPlanner.Services
         public bool UpdateGift(GiftEdit model)
         {
             ApplicationDbContext _db = new ApplicationDbContext();
-            var entity = _db.Gifts.Where(e => e.GiftId == model.GiftId).Single(e => e.OwnerId == _userId);
+
+            var entity = _db
+                .Gifts
+                .Where(e => e.OwnerId == _userId)
+                .Single(e => e.GiftId == model.GiftId);
 
             var person = GetPersonByGiftPersonId(entity.PersonId);
             person.Gifts.Remove(entity);

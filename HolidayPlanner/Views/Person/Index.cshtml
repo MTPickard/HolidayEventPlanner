@@ -4,79 +4,88 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create", new { id = TempData["BudgetId"]})
-</p>
+<div class="indexContainer col-md-12">
+    <div class="indexBackground col-md-10">
+        <div class="col-md-12">
+            <h2 class="indexTitle">Recipients</h2>
 
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
 
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
+            @if (TempData.ContainsKey("SaveResult"))
+            {
+                <div class="alert alert-success fade in" role="alert">
+
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                    @TempData["SaveResult"]
+                </div>
+            }
+
+
+            <table class="table">
+                <tr>
+                    <th class="tableheader col-md-2">
+                        @Html.DisplayNameFor(model => model.FullName)
+                    </th>
+                    <th class="tableheader col-md-1">
+                        @Html.DisplayNameFor(model => model.PersonBudget)
+                    </th>
+                    <th class="tableheader col-md-1">
+                        @Html.DisplayNameFor(model => model.CurrentBalance)
+                    </th>
+                    <th class="tableheader col-md-1">
+                        @Html.DisplayNameFor(model => model.AmountLeft)
+                    </th>
+                    <th class="tableheader col-md-1">
+                        @Html.DisplayNameFor(model => model.NumberOfGifts)
+                    </th>
+                    <th class="emptytablespace col-md-2"></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="tabledata">
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td class="budgetAmount">
+                            @Html.DisplayFor(modelItem => item.PersonBudget)
+                        </td>
+                        <td class="currentBalance">
+                            @Html.DisplayFor(modelItem => item.CurrentBalance)
+                        </td>
+                        <td class="amountLeft">
+                            @Html.DisplayFor(modelItem => item.AmountLeft)
+                        </td>
+                        <td class="savePerPaycheck">
+                            @Html.DisplayFor(modelItem => item.NumberOfGifts)
+                        </td>
+                        <td class="tableoptions">
+                            <ul>
+                                <li class="divider">@Html.ActionLink("Edit", "Edit", new { id = item.PersonId }, new { @class = "optionAL" })</li>
+                                <li class="divider">@Html.ActionLink("Details", "Details", new { id = item.PersonId }, new { @class = "optionAL" })</li>
+                                <li class="non-divider">@Html.ActionLink("Delete", "Delete", new { id = item.PersonId }, new { @class = "optionAL" })</li>
+                            </ul>
+                            <ul class="secondUl">
+                                <li class="non-divider">
+                                    @Html.ActionLink("View Gifts", "Index", "Gift", new { id = item.PersonId }, new { @class = "viewPeopleAL" })
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+            <div class="form-group">
+                <div class="col-md-offset-0 col-md-12">
+                    @Html.ActionLink("Back", "Index", "Budget", "", new { @class = "back col-md-1" })
+                    @Html.ActionLink("Add Person", "Create", new { id = TempData["BudgetId"] }, new { @class = "createBtn col-md-offset-9 col-md-2" })
+                </div>
+            </div>
+
+        </div>
     </div>
-}
-
-
-<table class="table">
-    <tr>
-        <th class="tableheader col-md-2">
-            @Html.DisplayNameFor(model => model.FullName)
-        </th>
-        <th class="tableheader col-md-2">
-            @Html.DisplayNameFor(model => model.PersonBudget)
-        </th>
-        <th class="tableheader col-md-2">
-            @Html.DisplayNameFor(model => model.CurrentBalance)
-        </th>
-        <th class="tableheader col-md-2">
-            @Html.DisplayNameFor(model => model.AmountLeft)
-        </th>
-        <th class="tableheader col-md-2">
-            @Html.DisplayNameFor(model => model.NumberOfGifts)
-        </th>
-        <th class="emptytablespace col-md-2"></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td class="tabledata">
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td class="budgetAmount">
-                @Html.DisplayFor(modelItem => item.PersonBudget)
-            </td>
-            <td class="currentBalance">
-                @Html.DisplayFor(modelItem => item.CurrentBalance)
-            </td>
-            <td class="amountLeft">
-                @Html.DisplayFor(modelItem => item.AmountLeft)
-            </td>
-            <td class="tabledata">
-                @Html.DisplayFor(modelItem => item.NumberOfGifts)
-            </td>
-            <td class="tableoptions">
-                <ul>
-                    <li class="divider">@Html.ActionLink("Edit", "Edit", new { id = item.PersonId })</li>
-                    <li class="divider">@Html.ActionLink("Details", "Details", new { id = item.PersonId })</li>
-                    <li>@Html.ActionLink("Delete", "Delete", new { id = item.PersonId })</li>
-                </ul>
-                <ul class="secondUl">
-                    <li>
-                        @Html.ActionLink("View Gifts", "Index", "Gift", new { id = item.PersonId }, null)
-                    </li>
-                </ul>
-            </td>
-        </tr>
-    }
-
-</table>
-
-<div>
-    @Html.ActionLink("Back to Budgets", "Index", "Budget")
+    <div class="col-md-2"></div>
 </div>

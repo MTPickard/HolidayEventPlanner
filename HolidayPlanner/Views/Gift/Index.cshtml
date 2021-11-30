@@ -5,59 +5,80 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="indexContainer col-md-12">
+    <div class="indexBackground col-md-10">
+        <div class="col-md-12">
+            <h2 class="indexTitle">
+                Gifts
+            </h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create", new { id = TempData["PersonId"]})
-</p>
+            @if (TempData.ContainsKey("SaveResult"))
+            {
+                <div class="alert alert-success fade in" role="alert">
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateAdded)
-        </th>
-    </tr>
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                    @TempData["SaveResult"]
+                </div>
+            }
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateAdded)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.GiftId}) |
-                @Html.ActionLink("Details", "Details", new { id = item.GiftId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.GiftId })
-            </td>
-        </tr>
-    }
+            <table class="table">
+                <tr>
+                    <th class="tableheader col-md-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th class="tableheader col-md-2">
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </th>
+                    <th class="tableheader col-md-2">
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th class="tableheader col-md-2">
+                        @Html.DisplayNameFor(model => model.TotalPrice)
+                    </th>
+                    <th class="tableheader col-md-2">
+                        @Html.DisplayNameFor(model => model.DateAdded)
+                    </th>
+                    <th class="emptytablespace col-md-2"></th>
+                </tr>
 
-</table>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="tabledata">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td class="tabledata">
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td class="tabledata">
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td class="tabledata">
+                            @Html.DisplayFor(modelItem => item.TotalPrice)
+                        </td>
+                        <td class="tabledata">
+                            @Html.DisplayFor(modelItem => item.DateAdded)
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="divider">@Html.ActionLink("Edit", "Edit", new { id = item.GiftId }, new { @class = "optionAL" }) </li>
+                                <li class="divider">@Html.ActionLink("Details", "Details", new { id = item.GiftId }, new { @class = "optionAL" })</li>
+                                <li class="non-divider">@Html.ActionLink("Delete", "Delete", new { id = item.GiftId }, new { @class = "optionAL" })</li>
+                            </ul>
+                        </td>
+                    </tr>
+                }
 
-<div>
-    @Html.ActionLink("Back to People", "Index", "Person", new { id = TempData["BudgetId"]}, null)
+            </table>
+            <div class="form-group">
+                <div class="col-md-offset-0 col-md-12">
+                    @Html.ActionLink("Back", "Index", "Person", new { id = TempData["BudgetId"] }, new { @class = "back col-md-1" })
+                    @Html.ActionLink("Add Gift", "Create", new { id = TempData["PersonId"] }, new { @class = "createBtn col-md-offset-9 col-md-2" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
 </div>

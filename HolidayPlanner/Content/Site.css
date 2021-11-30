@@ -1,12 +1,14 @@
 ﻿
 /*BODY*/
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url("Images/growmoney.jpg");
+    background-image: url("Images/MoneyJar.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 
 .body-content {
     padding-left: 15px;
@@ -25,30 +27,110 @@ textarea {
 }
 
 
-/*TITLE'S*/
-.budgetTitle{
-    color: black;
-    margin-top: .5em;
-    margin-bottom: .5em;
-    font-family: sans-serif;
-    font-size: 5em;
+/*HOME SCREEN*/
+
+.navbar{
+    color: white;
 }
 
-/*BUDGET TABLE*/
-.budgetbackground {
+
+.Jumbotron {
+    padding: 35px;
+    background-color: rgba(72, 72, 58, .85);
+}
+
+
+.introTitle {
+    background-color: rgb(0 0 0 / 0.75);
+    font-size: 5em;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 0px;
+    padding: 20px;
+    color: rgb(137, 189, 155);
+    text-decoration-line: underline;
+    text-decoration-color: white;
+}
+
+
+.intro {
+    background-color: rgba(0 0 0 / 0.75);
+    font-size: 1.2em;
+    color: rgb(247, 246, 243);
+    margin: 0;
+    padding: 20px;
+}
+
+ol {
+    color: rgb(202, 197, 186);
+    padding-left: 100px;
+    background-color: rgba(0 0 0 / 0.75);
+    margin-bottom: 0;
+}
+
+.instructionSteps {
+    color: white;
+    font-size: 1.2em;
     margin: 0;
     padding: 0;
-    border: 5px solid red;
-    height: 500px;
-    width: 500px;
-    background-color: black;
-    z-index: 100;
 }
 
-.table{
-    background-color: #1c1f21;
+
+.getStarted {
+    text-align: center;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: rgb(137, 189, 155);
+    border: 1px solid white;
+    color: rgb(0 0 0 / 0.75);
+    font-weight: bold;
+}
+
+    .getStarted:hover {
+        text-align: center;
+        border-radius: 5px;
+        padding: 15px;
+        background-color: rgb(0 0 0 / 0.75);
+        border: 1px solid rgb(137, 189, 155);
+        color: rgb(137, 189, 155);
+        font-weight: bold;
+        text-decoration-color: white;
+    }
+
+
+/*INDEX*/
+
+.indexTitle {
+    background-color: rgb(0 0 0 / 0.75);
+    font-size: 5em;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 20px;
+    color: rgb(137, 189, 155);
+    text-decoration-line: underline;
+    text-decoration-color: white;
+}
+
+
+.indexContainer {
+    margin: 0;
+    padding: 0;
+}
+
+
+.indexBackground {
+    padding: 15px;
+    background-color: rgba(72, 72, 58, .75);
+}
+
+
+.table {
+    background-color: rgb(0 0 0 / 0.57);
     color: white;
-    border: 3px solid black;
+    border: 3px solid rgb(0 0 0 / 0.7);
 }
 
 
@@ -61,39 +143,62 @@ textarea {
     color: #1c1f21;
 }
 
+
 .emptytablespace {
     background-color: #99907d;
     background-size: cover;
     border: 1px solid black;
 }
 
+
 .tabledata {
+    font-size: 1.3em;
     padding: 0;
     text-align: center;
     color: white;
     border: 1px solid #99907d;
 }
 
+
 .budgetAmount {
+    font-size: 1.3em;
     padding-top: 20px;
     text-align: center;
     border: 1px solid #99907d;
-    color: green;
+    font-weight: bold;
+    color: #96C9DC;
 }
+
 
 .currentBalance {
+    font-size: 1.3em;
     padding-top: 20px;
     text-align: center;
     border: 1px solid #99907d;
-    color: red;
+    font-weight: bold;
+    color: rgb(255, 0, 53);
 }
 
+
 .amountLeft {
+    font-size: 1.3em;
     padding-top: 20px;
     text-align: center;
     border: 1px solid #99907d;
-    color: dodgerblue;
+    font-weight: bold;
+    color: rgb(243, 202, 64);
 }
+
+
+.savePerPaycheck {
+    font-size: 1.3em;
+    padding-top: 20px;
+    text-align: center;
+    border: 1px solid #99907d;
+    font-weight: bold;
+    color: #77CF7C;
+}
+
 
 .tableoptions {
     border: 1px solid #99907d;
@@ -102,7 +207,27 @@ textarea {
     text-align: center;
 }
 
-ul{
+
+.optionAL {
+    color: white;
+}
+
+    .optionAL:hover {
+        color: rgb(137, 189, 155)
+    }
+
+
+.viewPeopleAL {
+    color: white;
+}
+
+    .viewPeopleAL:hover {
+        color: rgb(137, 189, 155)
+    }
+
+
+
+ul {
     margin: 0;
     padding: 0;
     text-align: center;
@@ -115,7 +240,7 @@ ul{
     border-top: 1px solid white;
 }
 
-.non-divider{
+.non-divider {
     padding-left: 5px;
     padding-right: 5px;
     list-style: none;
@@ -130,15 +255,208 @@ ul{
     border-right: 1px solid white;
 }
 
-.instructionSteps{
-    font-size: 2em;
+/*CREATE*/
+.form-group{
+    margin-top: 20px;
+}
+
+.control-label{
+    text-align: center;
+    padding: 0;
+}
+
+/*EDIT*/
+.editBackground {
+    background-color: rgba(72, 72, 58, .75);
+}
+
+.editTitle {
+    background-color: rgb(0 0 0 / 0.75);
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 20px;
+    color: rgb(137, 189, 155);
+    text-decoration-line:underline;
+    text-decoration-color: white;
+    font-size: 3em;
+}
+
+.form-horizontal{
+    margin: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+hr {
     color: black;
+    margin: 0 0 30px 0;
+    padding: 0;
 }
 
-.jumbotron{
+.form-group{
+    color: white;
 }
 
 
 
 
+/*DETAILS*/
+.dl-horizontal {
+    margin-top: 15px;
+    color: rgb(247, 244, 242);
+}
 
+
+/*DELETE*/
+
+.deleteWarningDiv {
+    margin-top: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(0 0 0 / 0.75);
+}
+
+.deleteTitle {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(137, 189, 155);
+    text-decoration-line: underline;
+    text-decoration-color: white;
+    font-size: 3em;
+    margin: 0;
+}
+
+.deleteVerification {
+    margin: 0;
+    padding-top: 5px;
+    font-size: 1.5em;
+    color: rgb(242, 84, 91);
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/*CONTAINER*/
+.container-fluid {
+    margin-top: 2.5em;
+    margin-left: 1.5em;
+}
+
+.copyright {
+    font-size: 1em;
+    margin-top: 0em;
+    margin-left: 4em;
+    color: rgb(132, 137, 74);
+    font-weight: bold;
+}
+
+
+/*BUTTONS*/
+.createBtn {
+    background-color: rgb(0 0 0 / 0.75);
+    border: 1px solid rgb(138, 234, 146);
+    border-radius: 5px;
+    padding: 6px 12px;
+    text-align: center;
+    font-size: 1em;
+    color: rgb(138, 234, 146);
+}
+
+    .createBtn:hover {
+        background-color: rgb(255 255 255 / 0.75);
+        border: 1px solid black;
+        color: black;
+        border-radius: 5px;
+        padding: 6px 12px;
+        text-align: center;
+        font-size: 1em;
+    }
+
+.deleteBtn {
+    background-color: rgb(103, 20, 21);
+    border: 1px solid rgb(153, 30, 32);
+    border-radius: 5px;
+    padding: 6px 12px;
+    text-align: center;
+    font-size: 1em;
+    color: white;
+}
+
+    .deleteBtn:hover {
+        background-color: rgb(255 255 255 / 0.75);
+        border: 1px solid black;
+        color: black;
+        border-radius: 5px;
+        padding: 6px 12px;
+        text-align: center;
+        font-size: 1em;
+    }
+
+
+.backLink {
+    margin: 5px;
+}
+
+
+.back {
+    background-color: rgb(0 0 0 / 0.75);
+    border: 1px solid rgb(177, 194, 251);
+    color: rgb(177, 194, 251);
+    border-radius: 5px;
+    padding: 6px 12px;
+    text-align: center;
+    font-size: 1em;
+}
+
+    .back:hover {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 6px 12px;
+        text-align: center;
+        background-color: rgb(255 255 255 / 0.75);
+        font-size: 1em;
+        color: black;
+    }
+
+
+.backTo {
+    font-size: .9em;
+}
+
+    .backTo:hover {
+        color: rgb(141, 169, 196);
+        text-decoration-line: underline;
+        text-decoration-color: white;
+    }
+
+
+.saveBtn {
+    border-radius: 5px;
+}
+
+    .saveBtn:hover {
+        background-color: rgb(154, 189, 151);
+        color: white;
+        border-radius: 5px;
+        border: 2px solid rgb(110, 160, 106);
+    }
+
+.createAL {
+    background-color: rgb(0 0 0 / 0.65);
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 1.3em;
+    color: white;
+}
+
+
+    .createAL:hover {
+        border-radius: 3px;
+        padding: 5px;
+        background-color: rgb(0 0 0 / 0.65);
+        color: rgb(137, 189, 155);
+        text-decoration: none;
+    }
